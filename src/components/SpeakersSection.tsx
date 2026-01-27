@@ -1,0 +1,134 @@
+import { useEffect, useRef, useState } from 'react';
+
+const speakers = [
+  {
+    name: 'Maya Chen',
+    focus: 'Embedded Systems & Creative Code',
+    bio: 'From gaming hardware to interactive art installations. Explores how constraints breed creativity.',
+    image: 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=400&h=400&fit=crop&crop=face',
+  },
+  {
+    name: 'Jordan Reeves',
+    focus: 'Open Source & Community',
+    bio: 'Maintainer of critical infrastructure. Talks about burnout, recovery, and finding your people.',
+    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face',
+  },
+  {
+    name: 'Dr. Amara Okafor',
+    focus: 'Hardware Security & Ethics',
+    bio: 'Researcher turned industry. Connecting silicon vulnerabilities to human trust.',
+    image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=400&fit=crop&crop=face',
+  },
+  {
+    name: 'Sam Nakamura',
+    focus: 'Robotics & Accessibility',
+    bio: 'Building assistive technology. On designing for edge cases that become core features.',
+    image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face',
+  },
+];
+
+const SpeakersSection = () => {
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <section
+      id="speakers"
+      ref={sectionRef}
+      className="relative py-24 md:py-32 overflow-hidden"
+    >
+      {/* Background */}
+      <div className="absolute inset-0 bg-card/20" />
+      <div className="absolute inset-0 grid-pattern opacity-20" />
+
+      <div className="relative container mx-auto px-6">
+        {/* Section header */}
+        <div className={`max-w-3xl mx-auto text-center mb-16 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+          <span className="inline-block font-mono text-sm text-primary mb-4 tracking-wider uppercase">
+            Speakers
+          </span>
+          <h2 className="text-3xl md:text-5xl font-bold mb-6 text-balance">
+            Voices That{' '}
+            <span className="gradient-text">Resonate</span>
+          </h2>
+          <div className="section-divider mb-8" />
+          <p className="text-lg text-muted-foreground leading-relaxed">
+            Our speakers aren't here to lecture—they're here to share. 
+            Engineers, researchers, and builders who've navigated the intersection 
+            of technical mastery and personal growth. Their paths weren't linear. 
+            Their stories are real.
+          </p>
+        </div>
+
+        {/* Speakers grid */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {speakers.map((speaker, index) => (
+            <div
+              key={speaker.name}
+              className={`group relative overflow-hidden rounded-lg bg-card/50 border border-border/50 card-hover transition-all duration-700 ${
+                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+              }`}
+              style={{ transitionDelay: `${200 + index * 100}ms` }}
+            >
+              {/* Image */}
+              <div className="aspect-[4/5] overflow-hidden">
+                <img
+                  src={speaker.image}
+                  alt={speaker.name}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 grayscale group-hover:grayscale-0"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-card via-card/20 to-transparent" />
+              </div>
+
+              {/* Content */}
+              <div className="absolute bottom-0 left-0 right-0 p-6">
+                <span className="inline-block font-mono text-xs text-primary mb-2 tracking-wider uppercase">
+                  {speaker.focus}
+                </span>
+                <h3 className="text-xl font-semibold text-foreground mb-2">
+                  {speaker.name}
+                </h3>
+                <p className="text-sm text-muted-foreground leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  {speaker.bio}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Themes callout */}
+        <div className={`mt-16 max-w-3xl mx-auto text-center transition-all duration-700 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+          <div className="inline-flex flex-wrap justify-center gap-3">
+            {['Systems Thinking', 'Career Paths', 'Open Source', 'Hardware', 'Ethics', 'Community'].map((theme) => (
+              <span
+                key={theme}
+                className="px-4 py-2 rounded-full bg-secondary/50 border border-border/50 text-sm text-muted-foreground font-mono"
+              >
+                {theme}
+              </span>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default SpeakersSection;
