@@ -66,7 +66,7 @@ const Navigation = () => {
           >
             <span className="text-xl md:text-2xl font-bold tracking-tight">
               <span className="text-primary">CEC</span>
-              <span className="text-foreground/80 font-light ml-1 hidden sm:inline">'25</span>
+              <span className="text-foreground/80 font-light ml-1 hidden sm:inline">'26</span>
             </span>
           </a>
 

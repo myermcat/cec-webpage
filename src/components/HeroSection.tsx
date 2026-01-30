@@ -36,7 +36,7 @@ const HeroSection = () => {
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/50 border border-border/50 mb-8">
             <span className="w-2 h-2 rounded-full bg-primary pulse-dot" />
             <span className="text-sm font-mono text-muted-foreground">
-              Spring 2025 • Registration Open
+              Spring 2026 • Registration Open
             </span>
           </div>
 
