@@ -1,6 +1,5 @@
 import { Button } from '@/components/ui/button';
 import CircuitLines from './CircuitLines';
-import { ArrowDown } from 'lucide-react';
 import heroImage from '@/assets/hero-workshop.jpg';
 
 const HeroSection = () => {
@@ -59,7 +58,7 @@ const HeroSection = () => {
             <Button
               variant="cta"
               size="xl"
-              onClick={() => window.open('https://example.com/register', '_blank')}
+              onClick={() => window.open('https://luma.com/aoycaats', '_blank')}
               className="min-w-[200px]"
             >
               Register Now
@@ -72,17 +71,6 @@ const HeroSection = () => {
             >
               Learn More
             </Button>
-          </div>
-        </div>
-
-        {/* Scroll indicator */}
-        <div
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 cursor-pointer animate-float"
-          onClick={scrollToAbout}
-        >
-          <div className="flex flex-col items-center gap-2 text-muted-foreground hover:text-primary transition-colors">
-            <span className="text-xs font-mono tracking-wider uppercase">Scroll</span>
-            <ArrowDown size={20} />
           </div>
         </div>
       </div>

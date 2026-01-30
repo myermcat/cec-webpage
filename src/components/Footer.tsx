@@ -7,7 +7,7 @@ const Footer = () => {
           <div className="flex items-center gap-2">
             <span className="text-xl font-bold tracking-tight">
               <span className="text-primary">CEC</span>
-              <span className="text-foreground/80 font-light ml-1">'25</span>
+              <span className="text-foreground/80 font-light ml-1">'26</span>
             </span>
           </div>
 

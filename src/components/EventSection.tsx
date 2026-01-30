@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { Button } from '@/components/ui/button';
-import { Calendar, MapPin, Users, Clock, ChevronDown } from 'lucide-react';
+import { Calendar, MapPin, Clock, ChevronDown } from 'lucide-react';
 import {
   Accordion,
   AccordionContent,
@@ -9,10 +9,9 @@ import {
 } from "@/components/ui/accordion";
 
 const eventDetails = [
-  { icon: Calendar, label: 'Date', value: 'April 12, 2025' },
+  { icon: Calendar, label: 'Date', value: 'April 12, 2026' },
   { icon: Clock, label: 'Time', value: '9:00 AM - 6:00 PM' },
   { icon: MapPin, label: 'Venue', value: 'Engineering Hall, Main Campus' },
-  { icon: Users, label: 'Capacity', value: '200 Attendees' },
 ];
 
 const faqs = [
@@ -30,7 +29,7 @@ const faqs = [
   },
   {
     question: 'Can I participate as a speaker or volunteer?',
-    answer: 'We\'re always looking for voices and hands! Speaker applications for CEC \'25 are closed, but volunteer applications open 1 month before the event. Join our mailing list to be notified.',
+    answer: 'We\'re always looking for voices and hands! Speaker applications for CEC \'26 are closed, but volunteer applications open 1 month before the event. Join our mailing list to be notified.',
   },
   {
     question: 'Is food provided?',
@@ -91,7 +90,7 @@ const EventSection = () => {
         </div>
 
         {/* Event details grid */}
-        <div className={`grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-16 transition-all duration-700 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+        <div className={`grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-16 max-w-4xl mx-auto transition-all duration-700 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           {eventDetails.map((detail) => (
             <div
               key={detail.label}
@@ -171,7 +170,7 @@ const EventSection = () => {
           <Button
             variant="cta"
             size="xl"
-            onClick={() => window.open('https://example.com/register', '_blank')}
+            onClick={() => window.open('https://luma.com/aoycaats', '_blank')}
           >
             Reserve Your Spot
           </Button>

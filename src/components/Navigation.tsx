@@ -90,7 +90,7 @@ const Navigation = () => {
             <Button
               variant="cta"
               size="default"
-              onClick={() => window.open('https://example.com/register', '_blank')}
+              onClick={() => window.open('https://luma.com/aoycaats', '_blank')}
             >
               Attend
             </Button>
@@ -128,7 +128,7 @@ const Navigation = () => {
           <Button
             variant="cta"
             className="mt-4"
-            onClick={() => window.open('https://example.com/register', '_blank')}
+            onClick={() => window.open('https://luma.com/aoycaats', '_blank')}
           >
             Attend
           </Button>
