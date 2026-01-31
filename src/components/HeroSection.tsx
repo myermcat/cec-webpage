@@ -1,6 +1,7 @@
 import { Button } from '@/components/ui/button';
 import CircuitLines from './CircuitLines';
 import heroImage from '@/assets/hero-workshop.jpg';
+import { hero, links } from '@/content';
 
 const HeroSection = () => {
   const scrollToAbout = () => {
@@ -35,22 +36,25 @@ const HeroSection = () => {
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/50 border border-border/50 mb-8">
             <span className="w-2 h-2 rounded-full bg-primary pulse-dot" />
             <span className="text-sm font-mono text-muted-foreground">
-              Spring 2026 • Registration Open
+              {hero.tagline}
             </span>
           </div>
 
           {/* Main title */}
           <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-6">
-            <span className="block text-foreground">Computer</span>
-            <span className="block text-foreground">Engineering</span>
-            <span className="block gradient-text">Conference</span>
+            <span className="block text-foreground">{hero.title.line1}</span>
+            <span className="block text-foreground">{hero.title.line2}</span>
+            <span className="block gradient-text">{hero.title.line3}</span>
           </h1>
 
           {/* Subtitle */}
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed">
-            A student-driven gathering where identity meets systems.
-            <br className="hidden sm:block" />
-            Real engineering. Real stories. Real impact.
+            {hero.subtitle.split('\n').map((line, i) => (
+              <span key={i}>
+                {line}
+                {i === 0 && <><br className="hidden sm:block" /> </>}
+              </span>
+            ))}
           </p>
 
           {/* CTA buttons */}
@@ -58,7 +62,7 @@ const HeroSection = () => {
             <Button
               variant="cta"
               size="xl"
-              onClick={() => window.open('https://luma.com/aoycaats', '_blank')}
+              onClick={() => window.open(links.registration, '_blank')}
               className="min-w-[200px]"
             >
               Register Now

@@ -1,31 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-
-const speakers = [
-  {
-    name: 'Maya Chen',
-    focus: 'Embedded Systems & Creative Code',
-    bio: 'From gaming hardware to interactive art installations. Explores how constraints breed creativity.',
-    image: 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=400&h=400&fit=crop&crop=face',
-  },
-  {
-    name: 'Jordan Reeves',
-    focus: 'Open Source & Community',
-    bio: 'Maintainer of critical infrastructure. Talks about burnout, recovery, and finding your people.',
-    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face',
-  },
-  {
-    name: 'Dr. Amara Okafor',
-    focus: 'Hardware Security & Ethics',
-    bio: 'Researcher turned industry. Connecting silicon vulnerabilities to human trust.',
-    image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=400&fit=crop&crop=face',
-  },
-  {
-    name: 'Sam Nakamura',
-    focus: 'Robotics & Accessibility',
-    bio: 'Building assistive technology. On designing for edge cases that become core features.',
-    image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face',
-  },
-];
+import { speakers } from '@/content';
 
 const SpeakersSection = () => {
   const [isVisible, setIsVisible] = useState(false);

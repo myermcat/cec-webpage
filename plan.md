@@ -13,5 +13,6 @@ every point of this plan first has to be discussed and proceed only after confir
     [x] remove all of them. skip those that cannot be simply removed and need to be replaced and mention them in the chat as soon as all that could be removed is removed.
 1.1 [x] remove "capacity" block and center the rest: date, time, venue
 
-2. all text that needs to be moved to strings, move to strings. Like conference date, loation, time, etc. speakers names, team names. speakers and team headshots? what else should be moved to strings and what shouldn't? email, instagram, linkedin? registration link, all other links?
-    - what do you think about moving all those things outside to some document or db idk for easier access and so other ppl can edit it and not only me? dont do anything just discuss first.
+2. [x] all text that needs to be moved to strings, move to strings. Like conference date, location, time, etc. speakers names, team names. speakers and team headshots? email, instagram, linkedin? registration link, all other links?
+    **Done:** Single content file `src/content.ts` now holds: `event` (date, time, venue, ctaSubtext), `links` (registration, email, instagram url+handle, linkedin url+handle), `hero` (tagline, title lines, subtitle), `speakers`, `team`, `faqs`. All components import from there.
+    - what do you think about moving all those things outside to some document or db idk for easier access and so other ppl can edit it and not only me? **Recommendation:** Keeping everything in `src/content.ts` is enough for now—version-controlled, one place to edit. Others can edit that file (or you can add a simple CMS / Google Sheet → build step later if you want non-devs editing without touching the repo).

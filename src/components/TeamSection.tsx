@@ -1,47 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-
-const team = [
-  {
-    name: 'Elena Rodriguez',
-    role: 'Lead Organizer',
-    image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=300&h=300&fit=crop&crop=face',
-  },
-  {
-    name: 'Marcus Johnson',
-    role: 'Program Director',
-    image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=300&h=300&fit=crop&crop=face',
-  },
-  {
-    name: 'Sarah Kim',
-    role: 'Speaker Liaison',
-    image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=300&h=300&fit=crop&crop=face',
-  },
-  {
-    name: 'David Chen',
-    role: 'Operations Lead',
-    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop&crop=face',
-  },
-  {
-    name: 'Priya Patel',
-    role: 'Design Lead',
-    image: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=300&h=300&fit=crop&crop=face',
-  },
-  {
-    name: 'James Wilson',
-    role: 'Tech Lead',
-    image: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=300&h=300&fit=crop&crop=face',
-  },
-  {
-    name: 'Lisa Nguyen',
-    role: 'Marketing Lead',
-    image: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=300&h=300&fit=crop&crop=face',
-  },
-  {
-    name: 'Ahmed Hassan',
-    role: 'Community Lead',
-    image: 'https://images.unsplash.com/photo-1519345182560-3f2917c472ef?w=300&h=300&fit=crop&crop=face',
-  },
-];
+import { team } from '@/content';
 
 const TeamSection = () => {
   const [isVisible, setIsVisible] = useState(false);

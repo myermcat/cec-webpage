@@ -4,6 +4,7 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Instagram, Linkedin, Mail, Send } from 'lucide-react';
 import { toast } from 'sonner';
+import { links } from '@/content';
 
 const ContactSection = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -161,7 +162,7 @@ const ContactSection = () => {
               <h3 className="text-xl font-semibold mb-6 text-foreground">Follow Along</h3>
               <div className="flex gap-4">
                 <a
-                  href="https://instagram.com"
+                  href={links.instagram.url}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-3 px-6 py-4 bg-secondary/50 rounded-lg border border-border/50 hover:border-primary/50 hover:bg-secondary transition-all group flex-1"
@@ -169,11 +170,11 @@ const ContactSection = () => {
                   <Instagram className="w-6 h-6 text-muted-foreground group-hover:text-primary transition-colors" />
                   <div>
                     <span className="block text-sm font-medium text-foreground">Instagram</span>
-                    <span className="block text-xs text-muted-foreground">@cec_conf</span>
+                    <span className="block text-xs text-muted-foreground">{links.instagram.handle}</span>
                   </div>
                 </a>
                 <a
-                  href="https://linkedin.com"
+                  href={links.linkedin.url}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-3 px-6 py-4 bg-secondary/50 rounded-lg border border-border/50 hover:border-primary/50 hover:bg-secondary transition-all group flex-1"
@@ -181,7 +182,7 @@ const ContactSection = () => {
                   <Linkedin className="w-6 h-6 text-muted-foreground group-hover:text-primary transition-colors" />
                   <div>
                     <span className="block text-sm font-medium text-foreground">LinkedIn</span>
-                    <span className="block text-xs text-muted-foreground">/cec-conference</span>
+                    <span className="block text-xs text-muted-foreground">{links.linkedin.handle}</span>
                   </div>
                 </a>
               </div>
@@ -191,10 +192,10 @@ const ContactSection = () => {
             <div className="text-center py-6">
               <p className="text-muted-foreground mb-2">Or email us directly at</p>
               <a
-                href="mailto:hello@cecconference.com"
+                href={`mailto:${links.email}`}
                 className="text-primary hover:text-primary/80 font-mono text-lg link-underline"
               >
-                hello@cecconference.com
+                {links.email}
               </a>
             </div>
           </div>

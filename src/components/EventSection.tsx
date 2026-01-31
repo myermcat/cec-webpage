@@ -7,38 +7,12 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { event, faqs, links } from '@/content';
 
-const eventDetails = [
-  { icon: Calendar, label: 'Date', value: 'April 12, 2026' },
-  { icon: Clock, label: 'Time', value: '9:00 AM - 6:00 PM' },
-  { icon: MapPin, label: 'Venue', value: 'Engineering Hall, Main Campus' },
-];
-
-const faqs = [
-  {
-    question: 'Where is the venue and how do I get there?',
-    answer: 'CEC takes place in Engineering Hall on Main Campus. The venue is fully accessible and located near public transit stops. Parking is available in Lot B with validation.',
-  },
-  {
-    question: 'Is the venue accessible?',
-    answer: 'Yes! The venue is fully wheelchair accessible with ramps, elevators, and accessible restrooms. We also provide reserved seating and can accommodate other accessibility needs—just let us know when you register.',
-  },
-  {
-    question: 'When will the schedule be released?',
-    answer: 'The detailed schedule will be released 2 weeks before the event. You\'ll receive it via email and it will be posted on this website. Expect a mix of talks, panels, and networking sessions.',
-  },
-  {
-    question: 'Can I participate as a speaker or volunteer?',
-    answer: 'We\'re always looking for voices and hands! Speaker applications for CEC \'26 are closed, but volunteer applications open 1 month before the event. Join our mailing list to be notified.',
-  },
-  {
-    question: 'Is food provided?',
-    answer: 'Yes! Registration includes lunch, coffee, and snacks. We accommodate dietary restrictions—make sure to note yours during registration.',
-  },
-  {
-    question: 'What should I bring?',
-    answer: 'Bring yourself, an open mind, and maybe a notebook. Some sessions have optional hands-on components—we\'ll provide materials, but feel free to bring a laptop if you want to follow along.',
-  },
+const eventDetailKeys = [
+  { icon: Calendar, label: 'Date', key: 'date' as const },
+  { icon: Clock, label: 'Time', key: 'time' as const },
+  { icon: MapPin, label: 'Venue', key: 'venue' as const },
 ];
 
 const EventSection = () => {
@@ -91,7 +65,7 @@ const EventSection = () => {
 
         {/* Event details grid */}
         <div className={`grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-16 max-w-4xl mx-auto transition-all duration-700 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-          {eventDetails.map((detail) => (
+          {eventDetailKeys.map((detail) => (
             <div
               key={detail.label}
               className="flex items-center gap-4 p-6 bg-card/50 rounded-lg border border-border/50"
@@ -101,7 +75,7 @@ const EventSection = () => {
               </div>
               <div>
                 <span className="text-sm text-muted-foreground font-mono">{detail.label}</span>
-                <p className="text-foreground font-medium">{detail.value}</p>
+                <p className="text-foreground font-medium">{event[detail.key]}</p>
               </div>
             </div>
           ))}
@@ -170,12 +144,12 @@ const EventSection = () => {
           <Button
             variant="cta"
             size="xl"
-            onClick={() => window.open('https://luma.com/aoycaats', '_blank')}
+            onClick={() => window.open(links.registration, '_blank')}
           >
             Reserve Your Spot
           </Button>
           <p className="text-sm text-muted-foreground mt-4 font-mono">
-            Limited to 200 attendees • Early registration recommended
+            {event.ctaSubtext}
           </p>
         </div>
       </div>

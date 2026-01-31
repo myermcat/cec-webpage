@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Menu, X } from 'lucide-react';
+import { links } from '@/content';
 
 const navItems = [
   { label: 'About', href: '#about' },
@@ -90,7 +91,7 @@ const Navigation = () => {
             <Button
               variant="cta"
               size="default"
-              onClick={() => window.open('https://luma.com/aoycaats', '_blank')}
+              onClick={() => window.open(links.registration, '_blank')}
             >
               Attend
             </Button>
@@ -128,7 +129,7 @@ const Navigation = () => {
           <Button
             variant="cta"
             className="mt-4"
-            onClick={() => window.open('https://luma.com/aoycaats', '_blank')}
+            onClick={() => window.open(links.registration, '_blank')}
           >
             Attend
           </Button>
