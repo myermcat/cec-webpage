@@ -12,7 +12,7 @@ export const event = {
 
 export const links = {
   registration: 'https://luma.com/aoycaats',
-  email: 'hello@cecconference.com',
+  email: 'fabdo006@uottawa.ca',
   instagram: {
     url: 'https://www.instagram.com/cegsc.ieee.uottawa/',
     handle: '@cegsc.ieee.uottawa',
@@ -62,7 +62,7 @@ export const speakers = [
 
 export const team = [
   { name: 'Mariia Yermolenko', role: 'Lead Organizer', image: '/team/mariia.jpg' },
-  { name: 'Fatima ...', role: 'Speakers Liaison', image: '/team/fatima.jpg' },
+  { name: 'Fatima ...', role: 'Program Director', image: '/team/fatima.jpg' },
   { name: 'Asif ...', role: 'Logistics Lead', image: '/team/placeholder.jpg' },
   { name: 'Paul ...', role: 'Sponsorship Lead', image: '/team/paul.jpg' },
   { name: 'Basma ...', role: 'Marketing Lead', image: '/team/placeholder.jpg' },
