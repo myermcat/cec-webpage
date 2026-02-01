@@ -1,21 +1,22 @@
 import { useEffect, useRef, useState } from 'react';
 import { Button } from '@/components/ui/button';
-import { Calendar, MapPin, Clock, ChevronDown } from 'lucide-react';
+import { Calendar, MapPin, Clock } from 'lucide-react';
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { event, faqs, links } from '@/content.ts';
+import { useLocale } from '@/context/LocaleContext';
 
-const eventDetailKeys = [
-  { icon: Calendar, label: 'Date', key: 'date' as const },
-  { icon: Clock, label: 'Time', key: 'time' as const },
-  { icon: MapPin, label: 'Venue', key: 'venue' as const },
+const eventDetailIcons = [
+  { icon: Calendar, key: 'date' as const },
+  { icon: Clock, key: 'time' as const },
+  { icon: MapPin, key: 'venue' as const },
 ];
 
 const EventSection = () => {
+  const { content } = useLocale();
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
 
@@ -36,6 +37,8 @@ const EventSection = () => {
     return () => observer.disconnect();
   }, []);
 
+  const labels = content.ui.event.detailLabels;
+
   return (
     <section
       id="event"
@@ -49,34 +52,31 @@ const EventSection = () => {
         {/* Section header */}
         <div className={`max-w-3xl mx-auto text-center mb-16 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           <span className="inline-block font-mono text-sm text-primary mb-4 tracking-wider uppercase">
-            The Event
+            {content.ui.event.sectionLabel}
           </span>
           <h2 className="text-3xl md:text-5xl font-bold mb-6 text-balance">
-            One Day.{' '}
-            <span className="gradient-text">Lasting Impact.</span>
+            {content.ui.event.title}
+            <span className="gradient-text">{content.ui.event.titleHighlight}</span>
           </h2>
           <div className="section-divider mb-8" />
           <p className="text-lg text-muted-foreground leading-relaxed">
-          CEC is a space where engineers talk openly about how they got here 
-          and what shaped them along the way. You will hear stories about failure, 
-          uncertainty, and slow progress, and how those experiences changed how 
-          people think about their work. 
+            {content.ui.event.intro}
           </p>
         </div>
 
         {/* Event details grid */}
         <div className={`grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-16 max-w-4xl mx-auto transition-all duration-700 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-          {eventDetailKeys.map((detail) => (
+          {eventDetailIcons.map(({ icon: Icon, key }) => (
             <div
-              key={detail.label}
+              key={key}
               className="flex items-center gap-4 p-6 bg-card/50 rounded-lg border border-border/50"
             >
               <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                <detail.icon className="w-6 h-6 text-primary" />
+                <Icon className="w-6 h-6 text-primary" />
               </div>
               <div>
-                <span className="text-sm text-muted-foreground font-mono">{detail.label}</span>
-                <p className="text-foreground font-medium">{event[detail.key]}</p>
+                <span className="text-sm text-muted-foreground font-mono">{labels[key]}</span>
+                <p className="text-foreground font-medium">{content.event[key]}</p>
               </div>
             </div>
           ))}
@@ -85,36 +85,12 @@ const EventSection = () => {
         {/* What to expect */}
         <div className={`max-w-3xl mx-auto mb-16 transition-all duration-700 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           <div className="bg-card/50 backdrop-blur-sm rounded-lg p-8 border border-border/50 glow-border">
-            <h3 className="text-xl font-semibold mb-4 text-foreground">What You'll Experience</h3>
-            {/* Previous schedule copy - commented out
+            <h3 className="text-xl font-semibold mb-4 text-foreground">{content.ui.event.whatYouExperience}</h3>
             <div className="space-y-4 text-muted-foreground">
-              <p>
-                <strong className="text-foreground">Morning:</strong> Keynotes that challenge your assumptions. 
-                Coffee and conversation with fellow builders.
-              </p>
-              <p>
-                <strong className="text-foreground">Afternoon:</strong> Breakout sessions on systems, 
-                career paths, and emerging technologies. Hands-on workshops optional but encouraged.
-              </p>
-              <p>
-                <strong className="text-foreground">Evening:</strong> Panel discussions, networking, 
-                and space to process everything you've absorbed.
-              </p>
-            </div>
-            */}
-            <div className="space-y-4 text-muted-foreground">
-              <p>
-                The full schedule is still coming together.
-              </p>
-              <p>
-                Expect short talks, shared meals, and time to actually sit with ideas and talk to people who are asking similar questions.
-              </p>
-              <p>
-                We're being intentional about leaving space for conversation, reflection, and the kinds of moments that don't fit neatly into a timetable.
-              </p>
-              <p>
-                More details soon.
-              </p>
+              <p>{content.ui.event.scheduleP1}</p>
+              <p>{content.ui.event.scheduleP2}</p>
+              <p>{content.ui.event.scheduleP3}</p>
+              <p>{content.ui.event.scheduleP4}</p>
             </div>
           </div>
         </div>
@@ -124,10 +100,10 @@ const EventSection = () => {
           <blockquote className="relative">
             <span className="text-6xl text-primary/30 absolute -top-4 -left-4">"</span>
             <p className="text-xl md:text-2xl text-foreground italic leading-relaxed mb-4">
-            Computer science is no more about computers than astronomy is about telescopes.
+              {content.ui.event.testimonialQuote}
             </p>
             <footer className="text-muted-foreground">
-              — <span className="font-mono text-primary">Edsger Dijkstra</span>
+              — <span className="font-mono text-primary">{content.ui.event.testimonialAttribution}</span>
             </footer>
           </blockquote>
         </div>
@@ -135,10 +111,10 @@ const EventSection = () => {
         {/* FAQ */}
         <div className={`max-w-3xl mx-auto transition-all duration-700 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           <h3 className="text-2xl font-bold text-center mb-8 text-foreground">
-            Frequently Asked Questions
+            {content.ui.event.faqHeading}
           </h3>
           <Accordion type="single" collapsible className="space-y-4">
-            {faqs.map((faq, index) => (
+            {content.faqs.map((faq, index) => (
               <AccordionItem
                 key={index}
                 value={`item-${index}`}
@@ -160,12 +136,12 @@ const EventSection = () => {
           <Button
             variant="cta"
             size="xl"
-            onClick={() => window.open(links.registration, '_blank')}
+            onClick={() => window.open(content.links.registration, '_blank')}
           >
-            Reserve Your Spot
+            {content.ui.event.reserveSpot}
           </Button>
           <p className="text-sm text-muted-foreground mt-4 font-mono">
-            {event.ctaSubtext}
+            {content.event.ctaSubtext}
           </p>
         </div>
       </div>

@@ -1,17 +1,24 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { Button } from '@/components/ui/button';
 import { Menu, X } from 'lucide-react';
-import { links } from '@/content.ts';
+import { useLocale } from '@/context/LocaleContext';
+import { Link } from 'react-router-dom';
 
-const navItems = [
-  { label: 'About', href: '#about' },
-  { label: 'Speakers', href: '#speakers' },
-  { label: 'Event', href: '#event' },
-  { label: 'Team', href: '#team' },
-  { label: 'Contact', href: '#contact' },
-];
+const sectionIds = ['about', 'speakers', 'event', 'team', 'contact'] as const;
 
 const Navigation = () => {
+  const { content, locale } = useLocale();
+  const navItems = useMemo(
+    () => [
+      { label: content.ui.nav.about, href: '#about' },
+      { label: content.ui.nav.speakers, href: '#speakers' },
+      { label: content.ui.nav.event, href: '#event' },
+      { label: content.ui.nav.team, href: '#team' },
+      { label: content.ui.nav.contact, href: '#contact' },
+    ],
+    [content]
+  );
+
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('');
@@ -20,9 +27,8 @@ const Navigation = () => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
 
-      // Update active section based on scroll position
-      const sections = navItems.map(item => item.href.replace('#', ''));
-      for (const section of sections.reverse()) {
+      const sections = [...sectionIds].reverse();
+      for (const section of sections) {
         const element = document.getElementById(section);
         if (element) {
           const rect = element.getBoundingClientRect();
@@ -86,14 +92,20 @@ const Navigation = () => {
             ))}
           </div>
 
-          {/* CTA Button */}
-          <div className="hidden md:block">
+          {/* CTA Button + Language switcher */}
+          <div className="hidden md:flex items-center gap-2">
+            <Link
+              to={locale === 'fr' ? '/' : '/fr'}
+              className="text-sm text-muted-foreground hover:text-foreground font-mono"
+            >
+              {locale === 'fr' ? 'EN' : 'FR'}
+            </Link>
             <Button
               variant="cta"
               size="default"
-              onClick={() => window.open(links.registration, '_blank')}
+              onClick={() => window.open(content.links.registration, '_blank')}
             >
-              Attend
+              {content.ui.nav.attend}
             </Button>
           </div>
 
@@ -126,12 +138,18 @@ const Navigation = () => {
               {item.label}
             </Button>
           ))}
+          <Link
+            to={locale === 'fr' ? '/' : '/fr'}
+            className="text-sm text-muted-foreground hover:text-foreground font-mono mt-2"
+          >
+            {locale === 'fr' ? 'EN' : 'FR'}
+          </Link>
           <Button
             variant="cta"
             className="mt-4"
-            onClick={() => window.open(links.registration, '_blank')}
+            onClick={() => window.open(content.links.registration, '_blank')}
           >
-            Attend
+            {content.ui.nav.attend}
           </Button>
         </div>
       </div>

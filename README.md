@@ -6,26 +6,36 @@ Website for the Computer Engineering Conference (CEC), a student-driven conferen
 
 ## ✏️ How to edit content (pics, names, dates, links)
 
-**Edit one file:** **`src/content.ts`**
+Content is split by language: **`src/content/en.ts`** (English) and **`src/content/fr.ts`** (French). Keep both in sync when changing event data, links, or copy.
 
-Everything that appears on the site as “content” lives there. No need to touch component code.
-
-| To change… | Edit in `src/content.ts`… |
-|------------|----------------------------|
+| To change… | Edit in `content/en.ts` and `content/fr.ts`… |
+|------------|---------------------------------------------|
 | **Event date, time, or venue** | `event.date`, `event.time`, `event.venue` |
 | **Hero tagline** (e.g. “Spring 2026 • Registration Open”) | `hero.tagline` |
 | **Registration link** (e.g. Luma) | `links.registration` |
 | **Contact email** | `links.email` |
-| **Instagram / LinkedIn** URL or handle | `links.instagram.url`, `links.instagram.handle`, `links.linkedin.url`, `links.linkedin.handle` |
-| **Speaker name, photo, or bio** | `speakers` array — each item has `name`, `focus`, `bio`, `image` (use image URL) |
-| **Team member name, photo, or role** | `team` array — each item has `name`, `role`, `image` (use image URL) |
+| **Instagram / LinkedIn** URL or handle | `links.instagram`, `links.linkedin` |
+| **Speaker name, photo, or bio** | `speakers` array — each item has `name`, `focus`, `bio`, `image` |
+| **Team member name, photo, or role** | `team` array — each item has `name`, `role`, `image` |
 | **FAQ questions or answers** | `faqs` array — each item has `question` and `answer` |
+| **UI labels, section titles, buttons** | `ui` object (nav, hero, about, event, speakers, team, contact, footer, notFound, meta) |
 
-**Changing a picture:** set the `image` field to the image URL (e.g. `'https://...'` or a path like `'/images/speaker.jpg'` if you put the file in `public/`).
-
-**Changing a name:** edit the `name` (or `handle`) in the right place in `src/content.ts` (e.g. in `speakers`, `team`, or `links`).
+**Changing a picture:** set the `image` field to the image URL or a path like `'/team/name.jpg'` if the file is in `public/`.
 
 Save the file; the dev server will reload. No need to edit any `.tsx` files for content changes.
+
+---
+
+## 🌐 How the French version works
+
+The site is bilingual (English and French) with **no i18n library**: everything is driven by URL and two content files.
+
+- **URLs:** English is at `/` (or `/cec-webpage` when deployed). French is at `/fr` (or `/cec-webpage/fr`). The locale is read from the path, so the French page has its own shareable link and works with the existing GitHub Pages base path.
+- **Content:** All user-visible text lives in **`src/content/en.ts`** and **`src/content/fr.ts`**. Each file exports the same shape: `event`, `links`, `hero`, `speakers`, `team`, `faqs`, and a `ui` object for nav labels, section titles, buttons, form labels, footer, 404 copy, and meta (title, description, etc.). Components never hardcode strings; they read from the active locale’s content via **`LocaleContext`**.
+- **Switcher:** The nav bar and footer include an **EN** / **FR** link that goes to `/` or `/fr` (with basename applied). Clicking it changes the URL and the whole page re-renders in the other language.
+- **Document head:** The page title and meta tags (description, keywords, Open Graph) are set in React from `content.ui.meta` when the locale changes, so search and social previews use the correct language.
+
+To add or change French copy, edit **`src/content/fr.ts`** and keep its structure in sync with **`src/content/en.ts`**.
 
 ---
 

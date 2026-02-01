@@ -1,9 +1,10 @@
 import { useEffect, useRef, useState } from 'react';
-import { team } from '@/content.ts';
+import { useLocale } from '@/context/LocaleContext';
 
 const baseUrl = (import.meta.env.BASE_URL || '/').replace(/\/$/, '');
 
 const TeamSection = () => {
+  const { content } = useLocale();
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
 
@@ -37,23 +38,21 @@ const TeamSection = () => {
         {/* Section header */}
         <div className={`max-w-3xl mx-auto text-center mb-16 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           <span className="inline-block font-mono text-sm text-primary mb-4 tracking-wider uppercase">
-            The Team
+            {content.ui.team.sectionLabel}
           </span>
           <h2 className="text-3xl md:text-5xl font-bold mb-6 text-balance">
-            Built By{' '}
-            <span className="gradient-text">Students</span>
+            {content.ui.team.title}
+            <span className="gradient-text">{content.ui.team.titleHighlight}</span>
           </h2>
           <div className="section-divider mb-8" />
           <p className="text-lg text-muted-foreground leading-relaxed">
-            CEC is organized entirely by students who believe in the power of 
-            community-driven learning. We're engineers, designers, and builders 
-            just like you.
+            {content.ui.team.intro}
           </p>
         </div>
 
         {/* Team grid */}
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-8">
-          {team.map((member, index) => (
+          {content.team.map((member, index) => (
             <div
               key={member.name}
               className={`group text-center transition-all duration-700 ${
