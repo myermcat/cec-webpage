@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
 import { team } from '@/content.ts';
 
+const baseUrl = (import.meta.env.BASE_URL || '/').replace(/\/$/, '');
+
 const TeamSection = () => {
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
@@ -62,7 +64,7 @@ const TeamSection = () => {
               {/* Photo */}
               <div className="relative mb-4 mx-auto w-24 h-24 md:w-32 md:h-32 overflow-hidden rounded-full bg-card border-2 border-border/50 group-hover:border-primary/50 transition-colors">
                 <img
-                  src={member.image}
+                  src={member.image.startsWith('http') ? member.image : baseUrl + member.image}
                   alt={member.name}
                   className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
                 />
