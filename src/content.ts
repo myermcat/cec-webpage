@@ -61,12 +61,13 @@ export const speakers = [
 ] as const;
 
 export const team = [
-  { name: 'Fatima ...', role: 'Lead Organizer', image: '/team/fatima.jpg' },
-  { name: 'Mariia Yermolenko', role: 'Program Director', image: '/team/mariia.jpg' },
+  { name: 'Mariia Yermolenko', role: 'Lead Organizer', image: '/team/mariia.jpg' },
+  { name: 'Fatima ...', role: 'Speakers Liaison', image: '/team/fatima.jpg' },
   { name: 'Asif ...', role: 'Logistics Lead', image: '/team/placeholder.jpg' },
   { name: 'Paul ...', role: 'Sponsorship Lead', image: '/team/paul.jpg' },
   { name: 'Basma ...', role: 'Marketing Lead', image: '/team/placeholder.jpg' },
   { name: 'Dounya ...', role: '...', image: '/team/placeholder.jpg' },
+  // Lead Organizer, Program Director, Speaker Liaison, Operations Lead, Design Lead, Tech Lead, Marketing Lead, Community Lead
   // Last two team members commented out for now
   // { name: 'Lisa Nguyen', role: 'Marketing Lead', image: '/team/placeholder.jpg' },
   // { name: 'Ahmed Hassan', role: 'Community Lead', image: '/team/placeholder.jpg' },
