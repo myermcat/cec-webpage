@@ -44,10 +44,7 @@ const SpeakersSection = () => {
           </h2>
           <div className="section-divider mb-8" />
           <p className="text-lg text-muted-foreground leading-relaxed">
-            Our speakers aren't here to lecture—they're here to share. 
-            Engineers, researchers, and builders who've navigated the intersection 
-            of technical mastery and personal growth. Their paths weren't linear. 
-            Their stories are real.
+            Our speakers aren't here to recruit or lecture. They're engineers, researchers, and builders who've been exactly where you are. People who've questioned their path, survived burnout, and figured out what actually matters. Their stories will show you that what you're going through right now isn't a problem, it's how this works.
           </p>
         </div>
 

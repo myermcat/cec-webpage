@@ -4,18 +4,18 @@
  */
 
 export const event = {
-  date: 'April 12, 2026',
-  time: '9:00 AM - 6:00 PM',
-  venue: 'Engineering Hall, Main Campus',
-  ctaSubtext: 'Limited to 200 attendees • Early registration recommended',
+  date: 'March 28, 2026',
+  time: '2:00 PM - 5:00 PM',
+  venue: 'University of Ottawa',
+  ctaSubtext: 'Limited number of attendees • Early registration recommended',
 } as const;
 
 export const links = {
   registration: 'https://luma.com/aoycaats',
   email: 'hello@cecconference.com',
   instagram: {
-    url: 'https://instagram.com',
-    handle: '@cec_conf',
+    url: 'https://www.instagram.com/cegsc.ieee.uottawa/',
+    handle: '@cegsc.ieee.uottawa',
   },
   linkedin: {
     url: 'https://linkedin.com',
@@ -30,7 +30,7 @@ export const hero = {
     line2: 'Engineering',
     line3: 'Conference',
   },
-  subtitle: "A student-driven gathering where identity meets systems.\nReal engineering. Real stories. Real impact.",
+  subtitle: "A half-day conference for engineers who know what they do, but not who they are.\nReal struggles. Real stories. Real perspective.",
 } as const;
 
 export const speakers = [

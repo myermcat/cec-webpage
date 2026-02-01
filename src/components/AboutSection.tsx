@@ -1,21 +1,21 @@
 import { useEffect, useRef, useState } from 'react';
-import { Cpu, Heart, Zap } from 'lucide-react';
+import { Sparkles, Code, PenLine } from 'lucide-react';
 
 const values = [
   {
-    icon: Cpu,
-    title: 'Systems Thinking',
-    description: 'We explore how complex systems work—from hardware to human organizations.',
+    icon: Sparkles,
+    title: 'Why Failure Is Necessary',
+    description: 'Learn how struggling now shapes the engineer you become later.',
   },
   {
-    icon: Heart,
-    title: 'Identity & Purpose',
-    description: 'Engineering is personal. We connect technical skills to meaning and self.',
+    icon: Code,
+    title: 'Why You Should Write Bad Code',
+    description: 'Understand why messy first attempts beat perfect paralysis every time.',
   },
   {
-    icon: Zap,
-    title: 'Real Practice',
-    description: 'No theory-only talks. Every session is grounded in hands-on experience.',
+    icon: PenLine,
+    title: 'Why Solutions Start On Paper',
+    description: 'Discover why the best code begins before you ever open your IDE.',
   },
 ];
 
@@ -73,17 +73,16 @@ const AboutSection = () => {
           <div className="bg-card/50 backdrop-blur-sm rounded-lg p-8 border border-border/50 glow-border">
             <h3 className="text-xl font-semibold mb-4 text-foreground">Our Story</h3>
             <p className="text-muted-foreground leading-relaxed mb-4">
-              We started as a small group of students frustrated with the gap between 
-              classroom theory and the messy, beautiful reality of building things. 
-              We wanted talks that felt like conversations with friends who'd been there—
-              who'd debugged at 3am, who'd questioned their career paths, who'd found 
-              meaning in the chaos of creation.
+              We're a group of students who spend all our time learning circuits, logic, 
+              assembly, architecture, but still don't really know what kind of person 
+              actually uses all this stuff together. By fourth year, we know what we do 
+              but not who we are. First years are asking "should I switch to CS?" 
+              Fourth years are asking "what even is computer engineering?"
             </p>
             <p className="text-muted-foreground leading-relaxed">
-              CEC is that space. It's where a systems architect shares not just their 
-              architecture diagram, but the identity crisis that led them there. 
-              Where a startup founder talks about failure before success. 
-              Where you leave not just with knowledge, but with perspective.
+              40-60% of engineering students drop out because of burnout and not seeing 
+              where this is going. CEC is our answer to that. It's where engineers share 
+              the messy reality. Where you hear about failure and leave seeing your struggles differently.
             </p>
           </div>
         </div>
