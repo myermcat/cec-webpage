@@ -35,8 +35,12 @@ const ContactSection = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // In a real app, this would send the form data
-    toast.success('Message sent! We\'ll get back to you soon.');
+    const subject = encodeURIComponent(`CEC website contact from ${formData.name}`);
+    const body = encodeURIComponent(
+      `${formData.message}\n\n---\nFrom: ${formData.name}\nReply-to: ${formData.email}`
+    );
+    window.location.href = `mailto:${links.email}?subject=${subject}&body=${body}`;
+    toast.success('Opening your email client. Send the message to reach us.');
     setFormData({ name: '', email: '', message: '' });
   };
 
