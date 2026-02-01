@@ -7,7 +7,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { event, faqs, links } from '@/content';
+import { event, faqs, links } from '@/content.ts';
 
 const eventDetailKeys = [
   { icon: Calendar, label: 'Date', key: 'date' as const },
@@ -57,9 +57,10 @@ const EventSection = () => {
           </h2>
           <div className="section-divider mb-8" />
           <p className="text-lg text-muted-foreground leading-relaxed">
-            CEC is more than talks—it's an experience. From morning coffee conversations 
-            to evening reflections, you'll be surrounded by people who think like you, 
-            question like you, and build like you. Come for the content, stay for the connections.
+          CEC is a space where engineers talk openly about how they got here 
+          and what shaped them along the way. You will hear stories about failure, 
+          uncertainty, and slow progress, and how those experiences changed how 
+          people think about their work. 
           </p>
         </div>
 
@@ -85,6 +86,7 @@ const EventSection = () => {
         <div className={`max-w-3xl mx-auto mb-16 transition-all duration-700 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           <div className="bg-card/50 backdrop-blur-sm rounded-lg p-8 border border-border/50 glow-border">
             <h3 className="text-xl font-semibold mb-4 text-foreground">What You'll Experience</h3>
+            {/* Previous schedule copy - commented out
             <div className="space-y-4 text-muted-foreground">
               <p>
                 <strong className="text-foreground">Morning:</strong> Keynotes that challenge your assumptions. 
@@ -99,6 +101,21 @@ const EventSection = () => {
                 and space to process everything you've absorbed.
               </p>
             </div>
+            */}
+            <div className="space-y-4 text-muted-foreground">
+              <p>
+                The full schedule is still coming together.
+              </p>
+              <p>
+                Expect short talks, shared meals, and time to actually sit with ideas and talk to people who are asking similar questions.
+              </p>
+              <p>
+                We're being intentional about leaving space for conversation, reflection, and the kinds of moments that don't fit neatly into a timetable.
+              </p>
+              <p>
+                More details soon.
+              </p>
+            </div>
           </div>
         </div>
 
@@ -107,11 +124,10 @@ const EventSection = () => {
           <blockquote className="relative">
             <span className="text-6xl text-primary/30 absolute -top-4 -left-4">"</span>
             <p className="text-xl md:text-2xl text-foreground italic leading-relaxed mb-4">
-              CEC changed how I think about my career. I came for the tech talks, 
-              but I left with a community and a clearer sense of why I build.
+            Computer science is no more about computers than astronomy is about telescopes.
             </p>
             <footer className="text-muted-foreground">
-              — <span className="font-mono text-primary">Alex T.</span>, CEC '24 Attendee
+              — <span className="font-mono text-primary">Edsger Dijkstra</span>
             </footer>
           </blockquote>
         </div>

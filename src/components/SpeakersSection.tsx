@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { speakers } from '@/content';
+import { speakers } from '@/content.ts';
 
 const SpeakersSection = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -44,12 +44,12 @@ const SpeakersSection = () => {
           </h2>
           <div className="section-divider mb-8" />
           <p className="text-lg text-muted-foreground leading-relaxed">
-            Our speakers aren't here to recruit or lecture. They're engineers, researchers, and builders who've been exactly where you are. People who've questioned their path, survived burnout, and figured out what actually matters. Their stories will show you that what you're going through right now isn't a problem, it's how this works.
+            Our speakers are engineers, researchers, and builders who have been exactly where you are. People who have questioned their path, survived burnout, and figured out what actually matters. Their stories will show you that what you're going through right now isn't a problem. It's where your story begins.
           </p>
         </div>
 
-        {/* Speakers grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {/* Speakers grid - commented out for now, show "Coming Soon!" instead */}
+        {/* <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {speakers.map((speaker, index) => (
             <div
               key={speaker.name}
@@ -58,7 +58,6 @@ const SpeakersSection = () => {
               }`}
               style={{ transitionDelay: `${200 + index * 100}ms` }}
             >
-              {/* Image */}
               <div className="aspect-[4/5] overflow-hidden">
                 <img
                   src={speaker.image}
@@ -67,8 +66,6 @@ const SpeakersSection = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-card via-card/20 to-transparent" />
               </div>
-
-              {/* Content */}
               <div className="absolute bottom-0 left-0 right-0 p-6">
                 <span className="inline-block font-mono text-xs text-primary mb-2 tracking-wider uppercase">
                   {speaker.focus}
@@ -82,6 +79,9 @@ const SpeakersSection = () => {
               </div>
             </div>
           ))}
+        </div> */}
+        <div className={`text-center py-16 transition-all duration-700 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+          <p className="text-2xl md:text-3xl font-mono text-muted-foreground">Coming Soon!</p>
         </div>
 
         {/* Themes callout */}

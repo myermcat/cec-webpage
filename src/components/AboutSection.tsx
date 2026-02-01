@@ -61,9 +61,9 @@ const AboutSection = () => {
           </h2>
           <div className="section-divider mb-8" />
           <p className="text-lg text-muted-foreground leading-relaxed">
-            CEC isn't your typical tech conference. Born from late-night dorm room conversations 
-            and countless hours in maker spaces, we created something different—a space where 
-            computer engineering students can explore not just <em>how</em> things work, 
+            CEC grew out of the questions we ask once class is over and you are trying to figure out why you do this first of all.
+            It is a space where you 
+            will not only see <em>how</em> things work, 
             but <em>why</em> we build them.
           </p>
         </div>

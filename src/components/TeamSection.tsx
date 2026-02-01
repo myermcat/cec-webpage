@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { team } from '@/content';
+import { team } from '@/content.ts';
 
 const TeamSection = () => {
   const [isVisible, setIsVisible] = useState(false);

@@ -1,7 +1,7 @@
 import { Button } from '@/components/ui/button';
 import CircuitLines from './CircuitLines';
 import heroImage from '@/assets/hero-workshop.jpg';
-import { hero, links } from '@/content';
+import { hero, links } from '@/content.ts';
 
 const HeroSection = () => {
   const scrollToAbout = () => {

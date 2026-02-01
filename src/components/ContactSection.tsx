@@ -4,7 +4,7 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Instagram, Linkedin, Mail, Send } from 'lucide-react';
 import { toast } from 'sonner';
-import { links } from '@/content';
+import { links } from '@/content.ts';
 
 const ContactSection = () => {
   const [isVisible, setIsVisible] = useState(false);

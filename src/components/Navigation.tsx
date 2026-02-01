@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Menu, X } from 'lucide-react';
-import { links } from '@/content';
+import { links } from '@/content.ts';
 
 const navItems = [
   { label: 'About', href: '#about' },
