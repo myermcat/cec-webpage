@@ -19,14 +19,14 @@ const CircuitLines = ({ className = '' }: CircuitLinesProps) => {
     >
       <defs>
         <linearGradient id="traceGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-          <stop offset="0%" stopColor="hsl(32 95% 55% / 0)" />
-          <stop offset="50%" stopColor="hsl(32 95% 55% / 0.6)" />
-          <stop offset="100%" stopColor="hsl(32 95% 55% / 0)" />
+          <stop offset="0%" stopColor="hsl(210 95% 55% / 0)" />
+          <stop offset="50%" stopColor="hsl(210 95% 55% / 0.6)" />
+          <stop offset="100%" stopColor="hsl(210 95% 55% / 0)" />
         </linearGradient>
         <linearGradient id="verticalTraceGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-          <stop offset="0%" stopColor="hsl(32 95% 55% / 0)" />
-          <stop offset="50%" stopColor="hsl(32 95% 55% / 0.4)" />
-          <stop offset="100%" stopColor="hsl(32 95% 55% / 0)" />
+          <stop offset="0%" stopColor="hsl(210 95% 55% / 0)" />
+          <stop offset="50%" stopColor="hsl(210 95% 55% / 0.4)" />
+          <stop offset="100%" stopColor="hsl(210 95% 55% / 0)" />
         </linearGradient>
       </defs>
       
@@ -87,10 +87,10 @@ const CircuitLines = ({ className = '' }: CircuitLinesProps) => {
       {/* Connection nodes */}
       {mounted && (
         <>
-          <circle cx="35%" cy="25%" r="3" fill="hsl(32 95% 55%)" opacity="0.6" className="pulse-dot" />
-          <circle cx="65%" cy="25%" r="3" fill="hsl(32 95% 55%)" opacity="0.6" className="pulse-dot" style={{ animationDelay: '0.5s' }} />
-          <circle cx="25%" cy="75%" r="3" fill="hsl(32 95% 55%)" opacity="0.6" className="pulse-dot" style={{ animationDelay: '1s' }} />
-          <circle cx="75%" cy="75%" r="3" fill="hsl(32 95% 55%)" opacity="0.6" className="pulse-dot" style={{ animationDelay: '1.5s' }} />
+          <circle cx="35%" cy="25%" r="3" fill="hsl(210 95% 55%)" opacity="0.6" className="pulse-dot" />
+          <circle cx="65%" cy="25%" r="3" fill="hsl(210 95% 55%)" opacity="0.6" className="pulse-dot" style={{ animationDelay: '0.5s' }} />
+          <circle cx="25%" cy="75%" r="3" fill="hsl(210 95% 55%)" opacity="0.6" className="pulse-dot" style={{ animationDelay: '1s' }} />
+          <circle cx="75%" cy="75%" r="3" fill="hsl(210 95% 55%)" opacity="0.6" className="pulse-dot" style={{ animationDelay: '1.5s' }} />
         </>
       )}
     </svg>

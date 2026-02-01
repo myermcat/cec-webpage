@@ -16,8 +16,8 @@
     --popover: 220 18% 10%;
     --popover-foreground: 45 10% 92%;
 
-    /* Warm amber/copper - soldering iron glow */
-    --primary: 32 95% 55%;
+    /* Electric blue - digital screen glow */
+    --primary: 210 95% 55%;
     --primary-foreground: 220 20% 6%;
 
     --secondary: 220 15% 15%;
@@ -26,7 +26,7 @@
     --muted: 220 15% 18%;
     --muted-foreground: 220 10% 55%;
 
-    --accent: 32 80% 45%;
+    --accent: 210 80% 55%;
     --accent-foreground: 45 10% 92%;
 
     --destructive: 0 84% 60%;
@@ -34,14 +34,14 @@
 
     --border: 220 15% 18%;
     --input: 220 15% 15%;
-    --ring: 32 95% 55%;
+    --ring: 210 95% 55%;
 
     --radius: 0.5rem;
 
     /* Custom tokens */
-    --glow-primary: 32 95% 55%;
-    --glow-secondary: 45 100% 70%;
-    --circuit-trace: 32 70% 40%;
+    --glow-primary: 210 95% 55%;
+    --glow-secondary: 200 100% 70%;
+    --circuit-trace: 210 70% 50%;
     --surface-elevated: 220 18% 12%;
   }
 
@@ -66,7 +66,7 @@
   }
 
   ::selection {
-    background: hsl(32 95% 55% / 0.3);
+    background: hsl(210 95% 55% / 0.3);
     color: hsl(45 10% 92%);
   }
 }
@@ -219,9 +219,9 @@
   /* Gradient text */
   .gradient-text {
     background: linear-gradient(135deg, 
-      hsl(32 95% 60%) 0%, 
-      hsl(45 100% 70%) 50%, 
-      hsl(32 95% 55%) 100%
+      hsl(210 95% 60%) 0%, 
+      hsl(200 100% 70%) 50%, 
+      hsl(210 95% 55%) 100%
     );
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
