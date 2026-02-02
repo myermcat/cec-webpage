@@ -11,6 +11,7 @@ export type Content = {
   links: {
     registration: string;
     email: string;
+    speakerApplication: string;
     instagram: { url: string; handle: string };
     linkedin: { url: string; handle: string };
   };
@@ -68,7 +69,11 @@ export type Content = {
       title: string;
       titleHighlight: string;
       intro: string;
-      comingSoon: string;
+      applyHeadline: string;
+      applySubtext: string;
+      applyButton: string;
+      applyDeadline: string;
+      applyFollowUp: string;
       themes: string[];
     };
     team: {

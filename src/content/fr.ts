@@ -10,6 +10,7 @@ export const contentFr: Content = {
   links: {
     registration: 'https://luma.com/aoycaats',
     email: 'fabdo006@uottawa.ca',
+    speakerApplication: 'https://forms.gle/sDqad7jwHUjBpk5KA',
     instagram: {
       url: 'https://www.instagram.com/cegsc.ieee.uottawa/',
       handle: '@cegsc.ieee.uottawa',
@@ -145,7 +146,11 @@ export const contentFr: Content = {
       title: 'Des voix qui ',
       titleHighlight: 'résonnent',
       intro: "Nos conférenciers sont des ingénieurs, chercheurs et bâtisseurs qui ont été exactement où vous êtes. Des gens qui ont questionné leur parcours, traversé le burnout et compris ce qui compte vraiment. Leurs récits montrent que ce que vous vivez n'est pas un problème. C'est le début de votre histoire.",
-      comingSoon: 'Bientôt !',
+      applyHeadline: 'Une histoire à partager, ou quelqu\'un qui en a une ?',
+      applySubtext: 'Nous cherchons des voix en ingénierie, recherche, industrie et communauté. L\'une d\'elles pourrait être la vôtre.',
+      applyButton: 'Postuler comme conférencier',
+      applyDeadline: 'Les candidatures se terminent le 10 février 2026.',
+      applyFollowUp: 'Les conférenciers retenus seront contactés après l\'examen des candidatures.',
       themes: ['Pensée système', 'Parcours professionnels', 'Open source', 'Matériel', 'Éthique', 'Communauté'],
     },
     team: {

@@ -10,6 +10,7 @@ export const contentEn: Content = {
   links: {
     registration: 'https://luma.com/aoycaats',
     email: 'fabdo006@uottawa.ca',
+    speakerApplication: 'https://forms.gle/sDqad7jwHUjBpk5KA',
     instagram: {
       url: 'https://www.instagram.com/cegsc.ieee.uottawa/',
       handle: '@cegsc.ieee.uottawa',
@@ -145,7 +146,11 @@ export const contentEn: Content = {
       title: 'Voices That ',
       titleHighlight: 'Resonate',
       intro: "Our speakers are engineers, researchers, and builders who have been exactly where you are. People who have questioned their path, survived burnout, and figured out what actually matters. Their stories will show you that what you're going through right now isn't a problem. It's where your story begins.",
-      comingSoon: 'Coming Soon!',
+      applyHeadline: 'Have a story to share, or know someone who does?',
+      applySubtext: "We're looking for voices across engineering, research, industry, and community. One of them might be you.",
+      applyButton: 'Apply to Speak',
+      applyDeadline: 'Applications close February 10, 2026.',
+      applyFollowUp: 'Selected speakers will be contacted after the application review.',
       themes: ['Systems Thinking', 'Career Paths', 'Open Source', 'Hardware', 'Ethics', 'Community'],
     },
     team: {
