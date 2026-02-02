@@ -15,8 +15,8 @@ export const contentEn: Content = {
       handle: '@cegsc.ieee.uottawa',
     },
     linkedin: {
-      url: 'https://linkedin.com',
-      handle: '/cec-conference',
+      url: 'https://www.linkedin.com/in/cegsc-ieee-uottawa-25879139b/',
+      handle: 'CEGSC.IEEE. UOTTAWA',
     },
   },
   hero: {
@@ -56,11 +56,11 @@ export const contentEn: Content = {
   ],
   team: [
     { name: 'Mariia Yermolenko', role: 'Lead Organizer', image: '/team/mariia.jpg' },
-    { name: 'Fatima ...', role: 'Program Director', image: '/team/fatima.jpg' },
-    { name: 'Asif ...', role: 'Logistics Lead', image: '/team/placeholder.jpg' },
-    { name: 'Paul ...', role: 'Sponsorship Lead', image: '/team/paul.jpg' },
-    { name: 'Basma ...', role: 'Marketing Lead', image: '/team/placeholder.jpg' },
-    { name: 'Dounya ...', role: '...', image: '/team/placeholder.jpg' },
+    { name: 'Fatimata Abdou Dramane', role: 'Program Director', image: '/team/fatima.jpg' },
+    { name: 'Asif Rahman', role: 'Logistics Lead', image: '/team/asif.jpg' },
+    { name: 'Paul Chukwu', role: 'Sponsorship Lead', image: '/team/paul.jpg' },
+    { name: 'Basma Ben Taleb', role: 'Marketing Lead', image: '/team/basma.jpg' },
+    { name: 'Dounya', role: ' ', image: '/team/placeholder.jpg' },
   ],
   faqs: [
     {
