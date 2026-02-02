@@ -37,6 +37,8 @@ The site is bilingual (English and French) with **no i18n library**: everything 
 
 To add or change French copy, edit **`src/content/fr.ts`** and keep its structure in sync with **`src/content/en.ts`**.
 
+**Reload / direct link:** On GitHub Pages, paths like `/cec-webpage/fr` don’t exist as files. The build copies `index.html` to `404.html` so that when you open or reload `/cec-webpage/fr`, GitHub serves the SPA; the URL stays correct and the app shows the French version.
+
 ---
 
 ## Run locally
