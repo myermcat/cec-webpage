@@ -16,6 +16,7 @@ const ContactSection = () => {
     message: '',
   });
   const [newsletterEmail, setNewsletterEmail] = useState('');
+  const [newsletterLoading, setNewsletterLoading] = useState(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -45,10 +46,29 @@ const ContactSection = () => {
     setFormData({ name: '', email: '', message: '' });
   };
 
-  const handleNewsletterSubmit = (e: React.FormEvent) => {
+  const handleNewsletterSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast.success(content.ui.contact.toastNewsletter);
-    setNewsletterEmail('');
+    const endpoint = content.links.newsletterFormEndpoint?.trim();
+    if (endpoint) {
+      setNewsletterLoading(true);
+      try {
+        const res = await fetch(endpoint, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email: newsletterEmail }),
+        });
+        if (!res.ok) throw new Error('Request failed');
+        toast.success(content.ui.contact.toastNewsletter);
+        setNewsletterEmail('');
+      } catch {
+        toast.error(content.ui.contact.toastNewsletterError);
+      } finally {
+        setNewsletterLoading(false);
+      }
+    } else {
+      toast.success(content.ui.contact.toastNewsletter);
+      setNewsletterEmail('');
+    }
   };
 
   const u = content.ui.contact;
@@ -157,8 +177,8 @@ const ContactSection = () => {
                   required
                   className="flex-1 bg-secondary/50 border-border/50 focus:border-primary"
                 />
-                <Button type="submit" variant="cta">
-                  {u.subscribe}
+                <Button type="submit" variant="cta" disabled={newsletterLoading}>
+                  {newsletterLoading ? u.subscribing : u.subscribe}
                 </Button>
               </form>
             </div>

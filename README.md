@@ -22,6 +22,8 @@ Content is split by language: **`src/content/en.ts`** (English) and **`src/conte
 
 **Changing a picture:** set the `image` field to the image URL or a path like `'/team/name.jpg'` if the file is in `public/`.
 
+**Stay Updated (newsletter) signups:** The Contact section has a “Stay Updated” form. To actually save emails, use [Formspree](https://formspree.io) (free): create a form with one field (e.g. “email”), get the form endpoint (e.g. `https://formspree.io/f/xxxxx`), and set **`links.newsletterFormEndpoint`** to that URL in both **`content/en.ts`** and **`content/fr.ts`**. Submissions will appear in your Formspree dashboard (and you can export or get notified). Leave it empty to keep the current behaviour (toast only, no save).
+
 Save the file; the dev server will reload. No need to edit any `.tsx` files for content changes.
 
 ---

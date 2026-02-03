@@ -12,6 +12,8 @@ export type Content = {
     registration: string;
     email: string;
     speakerApplication: string;
+    /** Formspree form endpoint for Stay Updated signups (e.g. https://formspree.io/f/xxxxx). Empty = no save, just toast. */
+    newsletterFormEndpoint: string;
     instagram: { url: string; handle: string };
     linkedin: { url: string; handle: string };
   };
@@ -96,10 +98,12 @@ export type Content = {
       stayUpdated: string;
       newsletterCopy: string;
       subscribe: string;
+      subscribing: string;
       followAlong: string;
       orEmailUs: string;
       toastOpenEmail: string;
       toastNewsletter: string;
+      toastNewsletterError: string;
     };
     footer: { tagline: string; copyright: string };
     notFound: { title: string; description: string; returnHome: string };

@@ -11,6 +11,7 @@ export const contentEn: Content = {
     registration: 'https://luma.com/aoycaats',
     email: 'fabdo006@uottawa.ca',
     speakerApplication: 'https://forms.gle/sDqad7jwHUjBpk5KA',
+    newsletterFormEndpoint: 'https://formspree.io/f/xdadvrog',
     instagram: {
       url: 'https://www.instagram.com/cegsc.ieee.uottawa/',
       handle: '@cegsc.ieee.uottawa',
@@ -177,10 +178,12 @@ export const contentEn: Content = {
       stayUpdated: 'Stay Updated',
       newsletterCopy: 'Get schedule announcements, speaker reveals, and event updates delivered to your inbox.',
       subscribe: 'Subscribe',
+      subscribing: 'Subscribing…',
       followAlong: 'Follow Along',
       orEmailUs: 'Or email us directly at',
       toastOpenEmail: 'Opening your email client. Send the message to reach us.',
       toastNewsletter: "You're on the list! Watch your inbox for updates.",
+      toastNewsletterError: 'Something went wrong. Please try again.',
     },
     footer: {
       tagline: 'Built by engineers, for engineers.',
