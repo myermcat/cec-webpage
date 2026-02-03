@@ -15,7 +15,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter
-        basename="/cec-webpage"
+        basename=""
         future={{
           v7_startTransition: true,
           v7_relativeSplatPath: true,

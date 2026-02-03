@@ -5,7 +5,7 @@ import fs from "fs";
 import { componentTagger } from "lovable-tagger";
 
 // GitHub Pages: serve SPA for all routes by copying index.html to 404.html.
-// When a path like /cec-webpage/fr is requested, GitHub serves 404.html;
+// When a path like /fr is requested on the custom domain, GitHub serves 404.html;
 // the URL stays correct and the app router handles it.
 function copyIndexTo404() {
   return {
@@ -22,8 +22,9 @@ function copyIndexTo404() {
 }
 
 // https://vitejs.dev/config/
+// base: "/" for custom domain (www.cec-uottawa.ca). Assets and routes are at root.
 export default defineConfig(({ mode }) => ({
-  base: "/cec-webpage/",
+  base: "/",
   server: {
     host: "::",
     port: 8080,

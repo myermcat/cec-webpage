@@ -6,7 +6,8 @@ import { contentFr } from '@/content/fr';
 
 export type Locale = 'en' | 'fr';
 
-const BASENAME = '/cec-webpage';
+// Empty when serving from custom domain root (www.cec-uottawa.ca).
+const BASENAME = '';
 
 const contentByLocale: Record<Locale, Content> = {
   en: contentEn,
