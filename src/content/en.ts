@@ -3,7 +3,7 @@ import type { Content } from './types';
 export const contentEn: Content = {
   event: {
     date: 'March 28, 2026',
-    time: '2:00 PM - 5:00 PM',
+    time: '2:00 PM - 6:00 PM',
     venue: 'University of Ottawa',
     ctaSubtext: 'Limited number of attendees • Early registration recommended',
   },
