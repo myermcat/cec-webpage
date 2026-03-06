@@ -27,6 +27,7 @@ export type Content = {
     focus: string;
     bio: string;
     image: string;
+    linkedin?: string;
   }[];
   team: readonly {
     name: string;

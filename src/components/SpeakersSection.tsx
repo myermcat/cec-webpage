@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
-import { Button } from '@/components/ui/button';
 import { useLocale } from '@/context/LocaleContext';
-import { Mic } from 'lucide-react';
+
+const baseUrl = (import.meta.env.BASE_URL || '/').replace(/\/$/, '');
 
 const SpeakersSection = () => {
   const { content } = useLocale();
@@ -53,37 +53,58 @@ const SpeakersSection = () => {
           </p>
         </div>
 
-        {/* Speaker application CTA */}
-        <div className={`max-w-2xl mx-auto transition-all duration-700 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-          <div className="relative rounded-2xl border border-border/50 bg-card/50 backdrop-blur-sm p-8 md:p-10 text-center overflow-hidden glow-border">
-            {/* Soft gradient accent */}
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-64 h-32 bg-primary/10 rounded-full blur-3xl pointer-events-none" />
-            <div className="relative">
-              <div className="w-12 h-12 mx-auto mb-6 rounded-xl bg-primary/10 flex items-center justify-center">
-                <Mic className="w-6 h-6 text-primary" />
-              </div>
-              <h3 className="text-xl md:text-2xl font-semibold text-foreground mb-3">
-                {u.applyHeadline}
-              </h3>
-              <p className="text-muted-foreground leading-relaxed mb-6">
-                {u.applySubtext}
-              </p>
-              <Button
-                variant="cta"
-                size="xl"
-                className="min-w-[200px]"
-                onClick={() => window.open(content.links.speakerApplication, '_blank')}
+        {/* Speaker cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+          {content.speakers.map((speaker, index) => {
+            const card = (
+              <>
+                {/* Photo */}
+                <div className="relative mb-4 mx-auto w-28 h-28 md:w-32 md:h-32 overflow-hidden rounded-full bg-card border-2 border-border/50 group-hover:border-primary/50 transition-colors">
+                  <img
+                    src={speaker.image.startsWith('http') ? speaker.image : baseUrl + speaker.image}
+                    alt={speaker.name}
+                    className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+                  />
+                </div>
+
+                {/* Info */}
+                <h3 className="text-lg font-semibold text-foreground mb-1">
+                  {speaker.name}
+                </h3>
+                <p className="text-sm text-primary font-mono mb-3">
+                  {speaker.focus}
+                </p>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  {speaker.bio}
+                </p>
+              </>
+            );
+
+            const cardClass = `group rounded-2xl border border-border/50 bg-card/50 backdrop-blur-sm p-6 text-center overflow-hidden transition-all duration-700 ${
+              speaker.linkedin ? 'hover:border-primary/30 cursor-pointer' : ''
+            } ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`;
+
+            return speaker.linkedin ? (
+              <a
+                key={speaker.name}
+                href={speaker.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={cardClass}
+                style={{ transitionDelay: `${100 + index * 75}ms` }}
               >
-                {u.applyButton}
-              </Button>
-              <p className="text-sm text-muted-foreground font-mono mt-6">
-                {u.applyDeadline}
-              </p>
-              <p className="text-xs text-muted-foreground/80 mt-2">
-                {u.applyFollowUp}
-              </p>
-            </div>
-          </div>
+                {card}
+              </a>
+            ) : (
+              <div
+                key={speaker.name}
+                className={cardClass}
+                style={{ transitionDelay: `${100 + index * 75}ms` }}
+              >
+                {card}
+              </div>
+            );
+          })}
         </div>
 
         {/* Themes callout */}
