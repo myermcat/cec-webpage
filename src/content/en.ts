@@ -40,8 +40,8 @@ export const contentEn: Content = {
     },
     {
       name: 'Peter Oliha',
-      focus: 'From Optimization to Choice',
-      bio: 'Lead Backend Engineer | SaaS Founder | I Build on the Internet • APIs • Cloud (AWS/GCP)',
+      focus: 'Lead Backend Engineer | SaaS Founder • APIs & Cloud',
+      bio: 'From Optimization to Choice',
       image: '/speakers/peter-oliha.png',
       linkedin: 'https://www.linkedin.com/in/peter-o-oliha-93b27118b/',
     },
@@ -63,18 +63,21 @@ export const contentEn: Content = {
       focus: 'Consultant on digital integrated circuit',
       bio: 'On The Accidental verifier',
       image: '/speakers/alfredo-herrera.jpeg',
+      linkedin: 'https://www.linkedin.com/in/alfredoherreraeng/',
     },
     {
       name: 'Matthew Jerabek',
       focus: 'Managing Innovation & Entrepreneurship',
       bio: 'On FAILURE',
       image: '/speakers/matthew-jerabek.png',
+      linkedin: 'https://www.linkedin.com/in/matthewjerabek/',
     },
     {
       name: 'Stephen Gagné',
       focus: 'Helping student entrepreneurs turn bold ideas into awesome outcomes.',
       bio: 'Writing Code Is the Last Thing You Should Do',
       image: '/speakers/stephen-gagne.png',
+      linkedin: 'https://www.linkedin.com/in/stephengagne/',
     },
     {
       name: 'Dan Cooper',
