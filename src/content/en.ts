@@ -78,9 +78,10 @@ export const contentEn: Content = {
     },
     {
       name: 'Dan Cooper',
-      focus: 'Architecting Government-Scale Systems',
-      bio: 'Chief IT Architect, Office of the Chief Information Officer of Canada • Leading large-scale digital infrastructure • Insights on public sector technology and real-world impact',
+      focus: 'Chief IT Architect, Government of Canada',
+      bio: 'On architecting government-scale systems and what it means to build technology at national scale',
       image: '/speakers/dan-cooper.png',
+      linkedin: 'https://www.linkedin.com/in/thedancooper/',
     },
   ],
   team: [

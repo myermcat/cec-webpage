@@ -78,9 +78,10 @@ export const contentFr: Content = {
     },
     {
       name: 'Dan Cooper',
-      focus: 'Architecture de systèmes à l\'échelle gouvernementale',
-      bio: 'Architecte TI en chef, Bureau du dirigeant principal de l\'information du Canada • Infrastructure numérique à grande échelle • Perspectives sur la technologie du secteur public',
+      focus: 'Architecte TI en chef, Gouvernement du Canada',
+      bio: 'Sur l\'architecture de systèmes à l\'échelle gouvernementale et ce que signifie construire des technologies à l\'échelle nationale',
       image: '/speakers/dan-cooper.png',
+      linkedin: 'https://www.linkedin.com/in/thedancooper/',
     },
   ],
   team: [
