@@ -93,7 +93,7 @@ export const contentEn: Content = {
     { name: 'Asif Rahman', role: 'Logistics Lead', image: '/team/asif.jpg' },
     { name: 'Paul Chukwu', role: 'Sponsorship Lead', image: '/team/paul.jpg' },
     { name: 'Basma Ben Taleb', role: 'Marketing Lead', image: '/team/basma.jpg' },
-    { name: 'Dounia', role: ' ', image: '/team/placeholder.jpg' },
+    { name: 'Dounia Bouimajdil', role: 'Operations & Experience Lead', image: '/team/Dounia.jpg' },
   ],
   faqs: [
     {
