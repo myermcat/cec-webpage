@@ -32,13 +32,6 @@ export const contentFr: Content = {
   },
   speakers: [
     {
-      name: 'Mathieu Gibeault',
-      focus: 'Instrumentation, automatisation et contrôle',
-      bio: 'À l\'intersection des bits et des atomes. Survivre à la fin de l\'ère logicielle pure et trouver son avantage concurrentiel.',
-      image: '/speakers/mathieu-gibeault.jpg',
-      linkedin: 'https://www.linkedin.com/in/mathieu-gibeault-567b4b11a/',
-    },
-    {
       name: 'Wassim El Ahmar',
       focus: 'Apprentissage automatique et vision par ordinateur',
       bio: 'L\'avenir de l\'ingénieur à l\'ère de l\'IA',
@@ -64,6 +57,30 @@ export const contentFr: Content = {
       bio: 'Construire avec intention : pour qui construisons-nous vraiment?',
       image: '/speakers/yousef-rafique.png',
       linkedin: 'https://www.linkedin.com/in/yousefrafique/',
+    },
+    {
+      name: 'Alfredo Herrera',
+      focus: 'Consultant en circuits intégrés numériques',
+      bio: 'Sur le vérificateur accidentel',
+      image: '/speakers/alfredo-herrera.jpeg',
+    },
+    {
+      name: 'Matthew Jerabek',
+      focus: 'Gestion de l\'innovation et de l\'entrepreneuriat',
+      bio: 'Sur l\'ÉCHEC',
+      image: '/speakers/matthew-jerabek.png',
+    },
+    {
+      name: 'Stephen Gagné',
+      focus: 'Aider les entrepreneurs étudiants à transformer des idées audacieuses en résultats.',
+      bio: 'Écrire du code est la dernière chose que vous devriez faire',
+      image: '/speakers/stephen-gagne.png',
+    },
+    {
+      name: 'Dan Cooper',
+      focus: 'Architecture de systèmes à l\'échelle gouvernementale',
+      bio: 'Architecte TI en chef, Bureau du dirigeant principal de l\'information du Canada • Infrastructure numérique à grande échelle • Perspectives sur la technologie du secteur public',
+      image: '/speakers/dan-cooper.png',
     },
   ],
   team: [

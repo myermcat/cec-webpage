@@ -32,13 +32,6 @@ export const contentEn: Content = {
   },
   speakers: [
     {
-      name: 'Mathieu Gibeault',
-      focus: 'Instrumentation, Automation and Control',
-      bio: 'Operating at the intersection of bits and atoms. On surviving the end of the software-only era, and finding your unfair advantage.',
-      image: '/speakers/mathieu-gibeault.jpg',
-      linkedin: 'https://www.linkedin.com/in/mathieu-gibeault-567b4b11a/',
-    },
-    {
       name: 'Wassim El Ahmar',
       focus: 'Machine learning and computer vision',
       bio: 'On an Engineer\'s Future in the era of AI',
@@ -64,6 +57,30 @@ export const contentEn: Content = {
       bio: 'On building with Intention: Who Are We Really Building For?',
       image: '/speakers/yousef-rafique.png',
       linkedin: 'https://www.linkedin.com/in/yousefrafique/',
+    },
+    {
+      name: 'Alfredo Herrera',
+      focus: 'Consultant on digital integrated circuit',
+      bio: 'On The Accidental verifier',
+      image: '/speakers/alfredo-herrera.jpeg',
+    },
+    {
+      name: 'Matthew Jerabek',
+      focus: 'Managing Innovation & Entrepreneurship',
+      bio: 'On FAILURE',
+      image: '/speakers/matthew-jerabek.png',
+    },
+    {
+      name: 'Stephen Gagné',
+      focus: 'Helping student entrepreneurs turn bold ideas into awesome outcomes.',
+      bio: 'Writing Code Is the Last Thing You Should Do',
+      image: '/speakers/stephen-gagne.png',
+    },
+    {
+      name: 'Dan Cooper',
+      focus: 'Architecting Government-Scale Systems',
+      bio: 'Chief IT Architect, Office of the Chief Information Officer of Canada • Leading large-scale digital infrastructure • Insights on public sector technology and real-world impact',
+      image: '/speakers/dan-cooper.png',
     },
   ],
   team: [
