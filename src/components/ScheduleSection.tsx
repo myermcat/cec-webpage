@@ -1,7 +1,11 @@
 import { useEffect, useRef, useState } from 'react';
 import { useLocale } from '@/context/LocaleContext';
 
-const ScheduleSection = () => {
+type ScheduleSectionProps = {
+  onSpeakerClick?: (speakerId: string | null) => void;
+};
+
+const ScheduleSection = ({ onSpeakerClick }: ScheduleSectionProps) => {
   const { content } = useLocale();
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
@@ -30,17 +34,11 @@ const ScheduleSection = () => {
     const el = document.getElementById(id);
     if (el) {
       e.preventDefault();
+      const speakerId = id.replace('speaker-', '');
+      onSpeakerClick?.(speakerId);
       el.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      // Add highlight after scroll has time to start
-      requestAnimationFrame(() => {
-        requestAnimationFrame(() => {
-          el.classList.remove('schedule-highlight');
-          void el.offsetHeight;
-          el.classList.add('schedule-highlight');
-          window.history.replaceState(null, '', href);
-          setTimeout(() => el.classList.remove('schedule-highlight'), 2500);
-        });
-      });
+      window.history.replaceState(null, '', href);
+      setTimeout(() => onSpeakerClick?.(null), 2500);
     }
   };
 
@@ -114,7 +112,7 @@ const ScheduleSection = () => {
                           {item.href ? (
                             <a
                               href={item.href}
-                              onClick={(e) => handleSpeakerClick(e, item.href!)}
+                              onClick={(e) => item.href && handleSpeakerClick(e, item.href)}
                               className="group block py-3 px-4 -mx-4 rounded-xl hover:bg-secondary/40 border border-transparent hover:border-primary/20 transition-all duration-200 cursor-pointer"
                             >
                               <span className="text-base font-semibold text-foreground group-hover:text-primary transition-colors">

@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import Navigation from '@/components/Navigation';
 import HeroSection from '@/components/HeroSection';
 import ScheduleSection from '@/components/ScheduleSection';
@@ -13,15 +14,16 @@ import { useDocumentHead } from '@/hooks/useDocumentHead';
 const Index = () => {
   const { content, locale } = useLocale();
   useDocumentHead(content, locale);
+  const [highlightedSpeakerId, setHighlightedSpeakerId] = useState<string | null>(null);
 
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Navigation />
       <main>
         <HeroSection />
-        <ScheduleSection />
+        <ScheduleSection onSpeakerClick={setHighlightedSpeakerId} />
         <AboutSection />
-        <SpeakersSection />
+        <SpeakersSection highlightedSpeakerId={highlightedSpeakerId} />
         <EventSection />
         <TeamSection />
         <ContactSection />

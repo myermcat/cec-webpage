@@ -24,12 +24,15 @@ export type Content = {
   };
   speakers: readonly {
     name: string;
-    focus: string;
-    bio: string;
-    image: string;
+    role: string;
+    talkTitle: string;
+    preview: string;
+    detailType: 'quote' | 'description';
+    detailText: string;
+    attribution?: string;
     linkedin?: string;
-    /** Anchor for schedule links, e.g. "yousef" → #speaker-yousef */
-    id?: string;
+    anchorId: string;
+    image: string;
   }[];
   schedule: {
     sectionLabel: string;
