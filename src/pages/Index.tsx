@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import Navigation from '@/components/Navigation';
 import HeroSection from '@/components/HeroSection';
 import ScheduleSection from '@/components/ScheduleSection';
@@ -14,35 +13,6 @@ import { useDocumentHead } from '@/hooks/useDocumentHead';
 const Index = () => {
   const { content, locale } = useLocale();
   useDocumentHead(content, locale);
-
-  // Highlight speaker card when navigating from schedule link (#speaker-xxx)
-  useEffect(() => {
-    let timeoutId: ReturnType<typeof setTimeout> | null = null;
-    const highlightFromHash = () => {
-      if (timeoutId) clearTimeout(timeoutId);
-      const hash = window.location.hash;
-      if (hash.startsWith('#speaker-')) {
-        const id = hash.slice(1);
-        const el = document.getElementById(id);
-        if (el) {
-          el.classList.remove('schedule-highlight');
-          void el.offsetHeight; // trigger reflow to restart animation
-          el.classList.add('schedule-highlight');
-          timeoutId = setTimeout(() => {
-            el.classList.remove('schedule-highlight');
-            timeoutId = null;
-          }, 2600);
-        }
-      }
-    };
-
-    highlightFromHash();
-    window.addEventListener('hashchange', highlightFromHash);
-    return () => {
-      window.removeEventListener('hashchange', highlightFromHash);
-      if (timeoutId) clearTimeout(timeoutId);
-    };
-  }, []);
 
   return (
     <div className="min-h-screen bg-background text-foreground">

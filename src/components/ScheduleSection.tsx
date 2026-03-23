@@ -25,6 +25,25 @@ const ScheduleSection = () => {
 
   const schedule = content.schedule;
 
+  const handleSpeakerClick = (e: React.MouseEvent, href: string) => {
+    const id = href.replace('#', '');
+    const el = document.getElementById(id);
+    if (el) {
+      e.preventDefault();
+      el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      // Add highlight after scroll has time to start
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          el.classList.remove('schedule-highlight');
+          void el.offsetHeight;
+          el.classList.add('schedule-highlight');
+          window.history.replaceState(null, '', href);
+          setTimeout(() => el.classList.remove('schedule-highlight'), 2500);
+        });
+      });
+    }
+  };
+
   return (
     <section
       id="schedule"
@@ -95,7 +114,8 @@ const ScheduleSection = () => {
                           {item.href ? (
                             <a
                               href={item.href}
-                              className="group block py-3 px-4 -mx-4 rounded-xl hover:bg-secondary/40 border border-transparent hover:border-primary/20 transition-all duration-200"
+                              onClick={(e) => handleSpeakerClick(e, item.href!)}
+                              className="group block py-3 px-4 -mx-4 rounded-xl hover:bg-secondary/40 border border-transparent hover:border-primary/20 transition-all duration-200 cursor-pointer"
                             >
                               <span className="text-base font-semibold text-foreground group-hover:text-primary transition-colors">
                                 {item.name}
