@@ -63,6 +63,7 @@ export const contentEn: Content = {
       detailType: 'quote',
       detailText: 'I\'m a recent graduate from the University of Waterloo\'s computer engineering program, and I currently work as a software developer for NAV CANADA here in Ottawa. My talk focuses on my journey from engineering undergraduate to full-time professional at one of the most important and least known companies in the country. When was the last time you flew on a plane? Did you think about who helps make sure it takes off, lands, and crosses the country without the sky turning into a giant scheduling disaster? Probably not. Most people do not. But behind every flight is a massive system of coordination, control, and technology that keeps Canadian air traffic moving safely and efficiently. One of the key organizations behind that system is NAV CANADA, one of the least talked about but most important companies in the country. Through my perspective, you\'ll get a look inside that world and what it\'s like to work at a company that keeps the whole country moving.',
       attribution: 'Jude Bennett',
+      linkedin: 'https://www.linkedin.com/in/jude-bennett-9367b0193/',
       anchorId: 'speaker-jude',
       image: '/speakers/jude-bennett.jpg',
     },

@@ -182,7 +182,7 @@ const SpeakersSection = ({ highlightedSpeakerId }: SpeakersSectionProps) => {
       {/* Speaker detail modal */}
       <Dialog open={!!openSpeaker} onOpenChange={(open) => !open && setOpenSpeaker(null)}>
         <DialogContent
-          className="max-w-lg rounded-2xl bg-card border-border/50 shadow-[0_0_40px_hsl(var(--primary)_/_0.1)]"
+          className="max-w-lg rounded-2xl bg-card border-border/50 shadow-[0_0_40px_hsl(var(--primary)_/_0.1)] p-6 pb-4 [&>button]:top-4 [&>button]:right-4"
           onPointerDownOutside={() => setOpenSpeaker(null)}
         >
           {openSpeaker && (
@@ -191,9 +191,9 @@ const SpeakersSection = ({ highlightedSpeakerId }: SpeakersSectionProps) => {
                 <DialogTitle>{openSpeaker.name}</DialogTitle>
               </DialogHeader>
 
-              <div className="flex flex-col items-center text-center space-y-6">
-                {/* Larger image */}
-                <div className="w-36 h-36 md:w-40 md:h-40 overflow-hidden rounded-full border-2 border-primary/50">
+              {/* Fixed header: image + name + role + talk title */}
+              <div className="flex flex-col items-center text-center shrink-0">
+                <div className="w-32 h-32 md:w-36 md:h-36 shrink-0 overflow-hidden rounded-full border-2 border-primary/50 mb-4">
                   <img
                     src={
                       openSpeaker.image.startsWith('http')
@@ -204,39 +204,34 @@ const SpeakersSection = ({ highlightedSpeakerId }: SpeakersSectionProps) => {
                     className="w-full h-full object-cover"
                   />
                 </div>
+                <h2 className="text-xl font-bold text-foreground">{openSpeaker.name}</h2>
+                <p className="text-primary font-mono text-sm mt-1">{openSpeaker.role}</p>
+                <p className="text-muted-foreground text-sm font-medium mt-2">
+                  {openSpeaker.talkTitle}
+                </p>
+              </div>
 
-                <div>
-                  <h2 className="text-2xl font-bold text-foreground">
-                    {openSpeaker.name}
-                  </h2>
-                  <p className="text-primary font-mono text-sm mt-1">
-                    {openSpeaker.role}
-                  </p>
-                  <p className="text-muted-foreground font-medium mt-3">
-                    {openSpeaker.talkTitle}
-                  </p>
-                </div>
-
-                {/* Intro content */}
-                <div className="text-left w-full">
-                  {openSpeaker.detailType === 'quote' ? (
-                    <blockquote className="border-l-2 border-primary/50 pl-4 py-2">
-                      <p className="text-sm text-muted-foreground italic">
-                        &ldquo;{openSpeaker.detailText}&rdquo;
-                      </p>
-                      <cite className="text-xs text-muted-foreground/80 mt-2 block not-italic">
-                        — {openSpeaker.attribution}
-                      </cite>
-                    </blockquote>
-                  ) : (
-                    <p className="text-sm text-muted-foreground leading-relaxed">
-                      {openSpeaker.detailText}
+              {/* Scrollable body */}
+              <div className="mt-4 max-h-[min(60vh,400px)] overflow-y-auto overscroll-contain">
+                {openSpeaker.detailType === 'quote' ? (
+                  <blockquote className="border-l-2 border-primary/50 pl-4 py-2 text-left">
+                    <p className="text-sm text-muted-foreground italic leading-relaxed">
+                      &ldquo;{openSpeaker.detailText}&rdquo;
                     </p>
-                  )}
-                </div>
+                    <cite className="text-xs text-muted-foreground/80 mt-2 block not-italic">
+                      — {openSpeaker.attribution}
+                    </cite>
+                  </blockquote>
+                ) : (
+                  <p className="text-sm text-muted-foreground leading-relaxed text-left">
+                    {openSpeaker.detailText}
+                  </p>
+                )}
+              </div>
 
-                {/* LinkedIn button */}
-                {openSpeaker.linkedin && (
+              {/* Fixed footer: LinkedIn */}
+              {openSpeaker.linkedin && (
+                <div className="mt-4 pt-4 border-t border-border/50 shrink-0 flex justify-center">
                   <Button
                     variant="outline"
                     size="sm"
@@ -248,8 +243,8 @@ const SpeakersSection = ({ highlightedSpeakerId }: SpeakersSectionProps) => {
                     <Linkedin className="h-4 w-4" />
                     LinkedIn
                   </Button>
-                )}
-              </div>
+                </div>
+              )}
             </>
           )}
         </DialogContent>
