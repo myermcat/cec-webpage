@@ -182,18 +182,18 @@ const SpeakersSection = ({ highlightedSpeakerId }: SpeakersSectionProps) => {
       {/* Speaker detail modal */}
       <Dialog open={!!openSpeaker} onOpenChange={(open) => !open && setOpenSpeaker(null)}>
         <DialogContent
-          className="max-w-lg rounded-2xl bg-card border-border/50 shadow-[0_0_40px_hsl(var(--primary)_/_0.1)] p-6 pb-4 [&>button]:top-4 [&>button]:right-4"
+          className="max-w-lg max-h-[85vh] flex flex-col overflow-hidden rounded-2xl bg-card border-border/50 shadow-[0_0_40px_hsl(var(--primary)_/_0.1)] pt-12 px-6 pb-4 gap-0 [&>button]:top-4 [&>button]:right-4"
           onPointerDownOutside={() => setOpenSpeaker(null)}
         >
           {openSpeaker && (
-            <>
+            <div className="flex flex-col min-h-0 flex-1 overflow-hidden">
               <DialogHeader className="sr-only">
                 <DialogTitle>{openSpeaker.name}</DialogTitle>
               </DialogHeader>
 
               {/* Fixed header: image + name + role + talk title */}
               <div className="flex flex-col items-center text-center shrink-0">
-                <div className="w-32 h-32 md:w-36 md:h-36 shrink-0 overflow-hidden rounded-full border-2 border-primary/50 mb-4">
+                <div className="w-28 h-28 shrink-0 overflow-hidden rounded-full border-2 border-primary/50 mb-3">
                   <img
                     src={
                       openSpeaker.image.startsWith('http')
@@ -204,15 +204,15 @@ const SpeakersSection = ({ highlightedSpeakerId }: SpeakersSectionProps) => {
                     className="w-full h-full object-cover"
                   />
                 </div>
-                <h2 className="text-xl font-bold text-foreground">{openSpeaker.name}</h2>
-                <p className="text-primary font-mono text-sm mt-1">{openSpeaker.role}</p>
-                <p className="text-muted-foreground text-sm font-medium mt-2">
+                <h2 className="text-lg font-bold text-foreground">{openSpeaker.name}</h2>
+                <p className="text-primary font-mono text-xs mt-1">{openSpeaker.role}</p>
+                <p className="text-muted-foreground text-sm font-medium mt-1">
                   {openSpeaker.talkTitle}
                 </p>
               </div>
 
               {/* Scrollable body */}
-              <div className="mt-4 max-h-[min(60vh,400px)] overflow-y-auto overscroll-contain">
+              <div className="mt-3 flex-1 min-h-0 overflow-y-auto overscroll-contain">
                 {openSpeaker.detailType === 'quote' ? (
                   <blockquote className="border-l-2 border-primary/50 pl-4 py-2 text-left">
                     <p className="text-sm text-muted-foreground italic leading-relaxed">
@@ -231,7 +231,7 @@ const SpeakersSection = ({ highlightedSpeakerId }: SpeakersSectionProps) => {
 
               {/* Fixed footer: LinkedIn */}
               {openSpeaker.linkedin && (
-                <div className="mt-4 pt-4 border-t border-border/50 shrink-0 flex justify-center">
+                <div className="mt-3 pt-3 border-t border-border/50 shrink-0 flex justify-center pb-1">
                   <Button
                     variant="outline"
                     size="sm"
@@ -245,7 +245,7 @@ const SpeakersSection = ({ highlightedSpeakerId }: SpeakersSectionProps) => {
                   </Button>
                 </div>
               )}
-            </>
+            </div>
           )}
         </DialogContent>
       </Dialog>
