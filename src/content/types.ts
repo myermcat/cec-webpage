@@ -28,7 +28,21 @@ export type Content = {
     bio: string;
     image: string;
     linkedin?: string;
+    /** Anchor for schedule links, e.g. "yousef" → #speaker-yousef */
+    id?: string;
   }[];
+  schedule: {
+    sectionLabel: string;
+    title: string;
+    intro: string;
+    note: string;
+    blocks: readonly {
+      blockLabel: string;
+      blockTitle: string;
+      type?: 'speakers' | 'intermission';
+      items?: readonly { name: string; title: string; href?: string }[];
+    }[];
+  };
   team: readonly {
     name: string;
     role: string;
@@ -39,7 +53,7 @@ export type Content = {
     answer: string;
   }[];
   ui: {
-    nav: { about: string; speakers: string; event: string; team: string; contact: string; attend: string };
+    nav: { schedule: string; about: string; speakers: string; event: string; team: string; contact: string; attend: string };
     hero: { registerNow: string; learnMore: string };
     about: {
       sectionLabel: string;

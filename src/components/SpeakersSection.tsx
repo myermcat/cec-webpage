@@ -84,6 +84,8 @@ const SpeakersSection = () => {
               speaker.linkedin ? 'hover:border-primary/30 cursor-pointer' : ''
             } ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`;
 
+            const cardWrapper = speaker.id ? { id: `speaker-${speaker.id}` } : {};
+
             return speaker.linkedin ? (
               <a
                 key={speaker.name}
@@ -92,6 +94,7 @@ const SpeakersSection = () => {
                 rel="noopener noreferrer"
                 className={cardClass}
                 style={{ transitionDelay: `${100 + index * 75}ms` }}
+                {...cardWrapper}
               >
                 {card}
               </a>
@@ -100,6 +103,7 @@ const SpeakersSection = () => {
                 key={speaker.name}
                 className={cardClass}
                 style={{ transitionDelay: `${100 + index * 75}ms` }}
+                {...cardWrapper}
               >
                 {card}
               </div>

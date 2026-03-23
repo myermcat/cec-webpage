@@ -4,12 +4,13 @@ import { Menu, X } from 'lucide-react';
 import { useLocale } from '@/context/LocaleContext';
 import { Link } from 'react-router-dom';
 
-const sectionIds = ['about', 'speakers', 'event', 'team', 'contact'] as const;
+const sectionIds = ['schedule', 'about', 'speakers', 'event', 'team', 'contact'] as const;
 
 const Navigation = () => {
   const { content, locale } = useLocale();
   const navItems = useMemo(
     () => [
+      { label: content.ui.nav.schedule, href: '#schedule' },
       { label: content.ui.nav.about, href: '#about' },
       { label: content.ui.nav.speakers, href: '#speakers' },
       { label: content.ui.nav.event, href: '#event' },
